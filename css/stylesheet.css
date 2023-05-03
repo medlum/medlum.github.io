@@ -8,3 +8,8 @@ h1{
     color: blueviolet;
     text-transform: capitalize;
 }
+
+li{
+    list-style: none;
+    text-transform: capitalize;
+}
