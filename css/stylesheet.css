@@ -60,10 +60,11 @@ li{
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1rem;
+    padding-right: 1rem;
     list-style: none;
     text-transform: capitalize;
     background-color: rgb(225, 225, 225, 0.6);
-    width: 20vw;
+    width: 25vw;
     color: rgb(56, 55, 55);
     margin-bottom: 2rem;
     margin-top: 0.5rem;
