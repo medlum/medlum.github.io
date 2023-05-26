@@ -13,62 +13,23 @@ body{
     font-family: 'Wix Madefor Text', sans-serif;
 }
 
+
 /*map section*/
 .container{
-    display: block;
     position: relative;
-    text-align: center;
-   
 }
+
 .map{
-    width: 100vw;
     border: solid 1px gray;
-    border-radius: 20px; 
+    border-radius: 20px;
+    width: 100%;
 }
 
-.north{
-
-   position:absolute;
-   top: 12%;
-   right: 55%;
-
-}
-
-.south{
-    position:absolute;
-    bottom: 45%;
-    right: 50%;
-}
-
-.east{
-    position:absolute;
-    bottom: 60%;
-    right: 20%;
-
-}
-
-.west{
-    position:absolute;
-    bottom: 60%;
-    left: 18%;
-
-}
-
-.central{
-    position:absolute;
-    bottom: 63%;
-    left: 40%;
-    
-}
-
-
-.region{
-    font-size: 1.5rem;
-   
-}
 
 /*info section*/
-
+.section{
+    width: 100%;
+}
 
 .grid-container{
     display: inline-grid;
@@ -80,13 +41,14 @@ body{
     font-weight: 500;
     font-size: 0.8rem;
     color: var(--color-primary);
-    background: hsl(50, 37%, 97%);
+    background: hsl(0, 4%, 95%);
     border-radius: 20px;
     justify-items: center;
     overflow: hidden;
-    width: 100vw;
-    height: 20vh;
-  
+    position: absolute;
+    top: 60% ;
+    width: 100%;
+    
 }
 
 .temperature, .humidity,.wind{
@@ -123,9 +85,4 @@ body{
     color: dodgerblue;
 }
 */
-.header-temp:hover,
-.header-humidity:hover,
-.header-wind:hover{
-    color: rgb(30, 28, 28);
 
-}
