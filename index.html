@@ -31,24 +31,26 @@
 		/>
 	</head>
 	<body>
-		<div class="grid-container">
-			<div class="grid-header temperature">Temperature</div>
-			<div class="grid-header humidity">Humidity</div>
-			<div class="grid-header wind">Wind</div>
-			<div class="grid-item item-temp">
-				<span style="font-size: 0.5rem">°C</span>
+		<section>
+			<div class="grid-container">
+				<div class="grid-header temperature">Temperature</div>
+				<div class="grid-header humidity">Humidity</div>
+				<div class="grid-header wind">Wind</div>
+				<div class="grid-item item-temp">
+					<span style="font-size: 0.5rem">°C</span>
+				</div>
+				<div class="grid-item item-humidity">
+					<span style="font-size: 0.5rem">%</span>
+				</div>
+				<div class="grid-item item-wind">
+					<span style="font-size: 0.5rem">km/h</span>
+					<span
+						class="wind-direction"
+						style="display: block; font-size: 0.5rem"
+					></span>
+				</div>
 			</div>
-			<div class="grid-item item-humidity">
-				<span style="font-size: 0.5rem">%</span>
-			</div>
-			<div class="grid-item item-wind">
-				<span style="font-size: 0.5rem">km/h</span>
-				<span
-					class="wind-direction"
-					style="display: block; font-size: 0.5rem"
-				></span>
-			</div>
-		</div>
+		</section>
 		<script src="js/generalAPI.js"></script>
 	</body>
 </html>

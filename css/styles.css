@@ -12,6 +12,11 @@
 body{
     font-family: 'Wix Madefor Text', sans-serif;
 }
+
+section{
+    margin:5px 0;
+
+}
 .grid-container{
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -24,9 +29,10 @@ body{
     color: var(--color-primary);
     background: hsl(50, 37%, 97%);
     border-radius: 20px;
-    width: 100vw;
+    width: 90vw;
     height: 20vh;
     justify-items: center;
+    overflow: hidden;
   
 }
 
