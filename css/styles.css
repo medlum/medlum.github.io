@@ -29,7 +29,7 @@ section{
     color: var(--color-primary);
     background: hsl(50, 37%, 97%);
     border-radius: 20px;
-    width: 90vw;
+    width: 80vw;
     height: 20vh;
     justify-items: center;
     overflow: hidden;
