@@ -13,10 +13,63 @@ body{
     font-family: 'Wix Madefor Text', sans-serif;
 }
 
-section{
-    margin:5px 0;
+/*map section*/
+.container{
+    display: block;
+    position: relative;
+    text-align: center;
+   
+}
+.map{
+    width: 100vw;
+    border: solid 1px gray;
+    border-radius: 20px; 
+}
+
+.north{
+
+   position:absolute;
+   top: 12%;
+   right: 55%;
 
 }
+
+.south{
+    position:absolute;
+    bottom: 45%;
+    right: 50%;
+}
+
+.east{
+    position:absolute;
+    bottom: 60%;
+    right: 20%;
+
+}
+
+.west{
+    position:absolute;
+    bottom: 60%;
+    left: 18%;
+
+}
+
+.central{
+    position:absolute;
+    bottom: 63%;
+    left: 40%;
+    
+}
+
+
+.region{
+    font-size: 1.5rem;
+   
+}
+
+/*info section*/
+
+
 .grid-container{
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -29,10 +82,10 @@ section{
     color: var(--color-primary);
     background: hsl(50, 37%, 97%);
     border-radius: 20px;
-    width: 80vw;
-    height: 20vh;
     justify-items: center;
     overflow: hidden;
+    width: 100vw;
+    height: 20vh;
   
 }
 
