@@ -5,8 +5,8 @@
 :root{
 
     --color-primary:#545353;
-    --color-secondary: #c9c9c9;
-    --color-accent :#ff3400;
+    --color-secondary: #a7a4a4;
+    --color-accent :#4eabfc;
 }
 
 body{
@@ -24,8 +24,8 @@ body{
     color: var(--color-primary);
     background: hsl(50, 37%, 97%);
     border-radius: 20px;
-    width: 80vw;
-    height: 25vh;
+    width: 100vw;
+    height: 30vh;
     margin: 5px;
     overflow: hidden;
 
@@ -49,14 +49,15 @@ hr{
 .item{
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-secondary);
+    color: var(--color-accent);
     transition: 0.3s;
-    opacity: 0;
+    opacity: 1;
     letter-spacing: 1px;
     text-align: center;
 
 }
 
+/*
 .temperature:hover .item-temp,
 .humidity:hover .item-humidity,
 .wind:hover .item-wind,
@@ -64,9 +65,9 @@ hr{
 .humidity:hover hr,
 .wind:hover hr{
     opacity: 1;
-    color: dodgerblue;
-}
 
+}
+*/
 /*
 .header-temp:hover ~.item-temp,
 .header-humidity:hover ~.item-humidity,
