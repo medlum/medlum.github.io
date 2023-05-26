@@ -22,7 +22,7 @@
 			crossorigin
 		/>
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<link
@@ -32,32 +32,21 @@
 	</head>
 	<body>
 		<div class="grid-container">
-			<div class="grid-item temperature">
-				<p class="header header-temp">Temperature</p>
-				<hr />
-				<p class="item item-temp">
-					<span style="font-size: 1rem">°C</span>
-				</p>
+			<div class="grid-header temperature">Temperature</div>
+			<div class="grid-header humidity">Humidity</div>
+			<div class="grid-header wind">Wind</div>
+			<div class="grid-item item-temp">
+				<span style="font-size: 0.5rem">°C</span>
 			</div>
-
-			<div class="grid-item humidity">
-				<p class="header header-humidity">Humidity</p>
-				<hr />
-				<p class="item item-humidity">
-					<span style="font-size: 1rem">%</span>
-				</p>
+			<div class="grid-item item-humidity">
+				<span style="font-size: 0.5rem">%</span>
 			</div>
-
-			<div class="grid-item wind">
-				<p class="header header-wind">Wind</p>
-				<hr />
-				<p class="item item-wind">
-					<span style="font-size: 1rem">km/h</span>
-					<span
-						class="wind-direction"
-						style="display: block; font-size: 1rem"
-					></span>
-				</p>
+			<div class="grid-item item-wind">
+				<span style="font-size: 0.5rem">km/h</span>
+				<span
+					class="wind-direction"
+					style="display: block; font-size: 0.5rem"
+				></span>
 			</div>
 		</div>
 		<script src="js/generalAPI.js"></script>

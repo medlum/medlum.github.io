@@ -34,20 +34,20 @@ const getGeneralData = () =>{
 
 const getWindDirection = (data) =>{
     const windSubDirection =    ["North"
-                                , "North-NorthEast"
-                                , "East-NorthEast"
+                                , "North-North East"
+                                , "East-North East"
                                 , "East"
-                                , "East-SouthEast"
-                                , "SouthEast"
+                                , "East-South East"
+                                , "South East"
                                 , "South-SouthEast"
                                 , "South"
-                                , "South-SouthWest"
-                                , "SouthWest"
+                                , "South-South West"
+                                , "South West"
                                 , "West-SouthWest"
                                 , "West"
-                                , "West-NorthWest"
-                                , "NorthWest"
-                                , "North-NorthWest"];
+                                , "West-North West"
+                                , "North West"
+                                , "North-North West"];
     const winddirection = data.items[0].general.wind.direction;
 
     switch(winddirection.toUpperCase()){
