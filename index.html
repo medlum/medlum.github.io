@@ -10,36 +10,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<meta
-			name="description"
-			content="24 hour weather forecast in Singapore."
-		/>
-		<meta
-			property="og:title"
-			content="Welcome home!"
-		/>
-
-		<meta
-			property="og:description"
-			content="24 hours weather forecast from www.data.gov.sg"
-		/>
-
-		<meta
-			property="og:type"
-			content="website"
-		/>
-
-		<meta
-			property="og:image"
-			content="https://images.mubicdn.net/images/cast_member/2552/cache-207-1524922850/image-w856.jpg?size=150x"
-		/>
-
-		<meta
-			property="og:url"
-			content="https://medlum.github.io/"
-		/>
-
-		<title>Weather Forecast 24 Hours</title>
+		<title>Grid Layout</title>
 
 		<link
 			rel="preconnect"
@@ -51,94 +22,44 @@
 			crossorigin
 		/>
 		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;1,300;1,400&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500&display=swap"
 			rel="stylesheet"
 		/>
 		<link
 			rel="stylesheet"
-			href="stylesheet.css"
+			href="css/styles.css"
 		/>
-
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-		<script
-			src="https://kit.fontawesome.com/60e07fbd21.js"
-			crossorigin="anonymous"
-		></script>
 	</head>
-
 	<body>
-		<script src="datetime.js"></script>
-		<script src="api.js"></script>
+		<div class="grid-container">
+			<div class="grid-item temperature">
+				<p class="header header-temp">Temperature</p>
+				<hr />
+				<p class="item item-temp">
+					<span style="font-size: 0.5rem">°C</span>
+				</p>
+			</div>
 
-		<div class="block block--pink container">
-			<h3 class="block__header">Weather Forecast</h3>
-			<p
-				class="block__date"
-				id="date-display"
-			>
-				<script>
-					document.getElementById("date-display").innerHTML = dateDisplay;
-				</script>
-			</p>
+			<div class="grid-item humidity">
+				<p class="header header-humidity">Humidity</p>
+				<hr />
+				<p class="item item-humidity">
+					<span style="font-size: 0.5rem">%</span>
+				</p>
+			</div>
 
-			<p class="block__forecast"></p>
-			<!--
-							<img
-				class="block__weather-icon"
-				id="weather-icon"
-				src="weatherimage/thundery-shower.svg"
-				alt=""
-			/>
-
-			-->
-
-			<lottie-player
-				id="forecast_animation"
-				class="icon"
-				src="animation/thunderstorm2.json"
-				background="transparent"
-				speed="1"
-				style="width: 300px; height: 300px"
-				hover="true"
-				loop
-				autoplay
-			></lottie-player>
-
-			<ul class="block__info">
-				<li>
-					Temperature : <span id="temp-low"></span>°C -
-					<span id="temp-high"></span>°C
-				</li>
-				<li>
-					Relative Humidity : <span id="humidity-low"></span>% -
-					<span id="humidity-high"></span>%
-				</li>
-				<li>
-					Wind Speed : <span id="wind-low"></span>km/h -
-					<span id="wind-high"></span>km/h
-				</li>
-				<li>Wind Direction : <span id="wind-direction"></span></li>
-			</ul>
-
-			<lottie-player
-				class="astro"
-				src="weatherimage/astro.json"
-				background="transparent"
-				speed="1"
-				style="width: 100px; height: 100px"
-				hover="true"
-				loop
-				autoplay
-			></lottie-player>
-
-			<footer>
-				Copyright 2023 @Andy
-				<span>
-					<a href="https://github.com/medlum/medlum.github.io"
-						><i class="fa-brands fa-github"></i></a
-				></span>
-			</footer>
+			<div class="grid-item wind">
+				<p class="header header-wind">Wind</p>
+				<hr />
+				<p class="item item-wind">
+					<span style="font-size: 0.5rem">km/h</span>
+					<span
+						class="wind-direction"
+						style="display: block; font-size: 1rem"
+					></span>
+				</p>
+			</div>
 		</div>
+		<script src="js/generalAPI.js"></script>
 	</body>
 </html>

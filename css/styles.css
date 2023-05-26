@@ -1,0 +1,71 @@
+.html{
+    font-size: 62.5%;
+}
+
+:root{
+
+    --color-primary:#565454;
+    --color-secondary: #c9c9c9;
+    --color-accent :#ff3400;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+.grid-container{
+    display: inline-grid;
+	grid-template-columns: 1fr 1fr 1fr;
+    cursor: pointer;
+    padding: 0 1rem ;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 0.5rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    background: #f1efe8;
+    border-radius: 15px;
+    width: 85%;
+    margin: 10px;
+    overflow: hidden;
+
+}
+
+.header{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.item{
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
+hr{
+    width: 1rem;
+    opacity: 0;
+}
+
+.item{
+    font-size: 1.0rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    transition: 0.8s;
+    opacity: 0;
+    letter-spacing: 2px;
+
+}
+
+.header-temp:hover ~.item-temp,
+.header-humidity:hover ~.item-humidity,
+.header-wind:hover ~.item-wind,
+.header-temp:hover ~ hr,
+.header-humidity:hover ~ hr,
+.header-wind:hover ~ hr{
+    opacity: 1;
+}
+
+.header-temp:hover,
+.header-humidity:hover,
+.header-wind:hover{
+    color: rgb(30, 28, 28);
+
+}
