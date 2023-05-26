@@ -17,22 +17,21 @@ body{
 /*map section*/
 .container{
     position: relative;
+    width: 100%;
+
 }
 
 .map{
     border: solid 1px gray;
     border-radius: 20px;
-    width: 100%;
+    width: 70%;
 }
 
 
 /*info section*/
-.section{
-    width: 100%;
-}
 
 .grid-container{
-    display: inline-grid;
+    display: grid ;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     cursor: pointer;
@@ -46,8 +45,9 @@ body{
     justify-items: center;
     overflow: hidden;
     position: absolute;
-    top: 60% ;
-    width: 100%;
+    top: 80%;
+    left: 0%;
+    width: 75%;
     
 }
 
