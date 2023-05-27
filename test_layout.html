@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Layout Test</title>
+
+        <link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			.container {
+				width: 100%;
+				margin: 0 auto;
+				position: relative;
+			}
+
+            body{font-family: 'Wix Madefor Text', sans-serif;
+            }
+
+			img {
+				height: 1080px;
+			}
+
+			.grid-container {
+				display: grid;
+				grid-template-columns: repeat(3, 224px);
+                grid-template-rows: 1fr 1fr;
+				cursor: pointer;
+				padding: 0.5rem 1rem;
+				letter-spacing: 1px;
+				font-weight: 500;
+				font-size: 1.2rem;
+				background: hsl(0, 4%, 95%);
+				border-radius: 15px;
+				justify-items: center;
+				overflow: hidden;
+				position: absolute;
+				bottom: 8.5px;
+                left: 4px;
+                height: 180px;
+                opacity: 0.8;
+
+			}
+
+            .grid-header{
+                margin: 20px 0;
+                color: #2e2d2d;
+            }
+
+            .grid-item{
+                font-size: 2rem;
+                color: rgb(84, 84, 84);
+            }
+
+		</style>
+	</head>
+	<body>
+		<section class="container">
+			<img
+				src="images/rain-drops.jpg"
+				alt=""
+			/>
+			<div class="grid-container">
+				<div class="grid-header temperature">Temperature</div>
+				<div class="grid-header humidity">Humidity</div>
+				<div class="grid-header wind">Wind</div>
+                <div class="grid-item item-temp">
+					<span style="font-size: 0.8rem">°C</span>
+				</div>
+				<div class="grid-item item-humidity">
+					<span style="font-size: 0.8rem">%</span>
+				</div>
+				<div class="grid-item item-wind">
+					<span style="font-size: 0.8rem">km/h</span>
+					<span
+						class="wind-direction"
+						style="display: block; font-size: 1rem"
+					></span>
+			</div>
+		</section>
+        <script src="js/generalAPI.js"></script>
+	</body>
+</html>
