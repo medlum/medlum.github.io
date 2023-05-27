@@ -10,7 +10,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Layout Test</title>
+		<title>Background Image Test</title>
 
         <link
 			rel="preconnect"
@@ -27,28 +27,25 @@
 		/>
 		<style>
 			.container {
-				width: 800px;
+				width: 640px;
+                height: 960px;
 				margin: 1rem auto;
 				position: relative;
 				text-align: center;
 				background-image: url(images/rain-drops.jpg) ;
+                background-repeat: no-repeat;
+                border-radius: 50px;
+                overflow: hidden;
 			}
 
             body{font-family: 'Wix Madefor Text', sans-serif;
             }
-
-			img {
-				height: 1080px;
-				border: solid 2px #fff;
-				border-radius: 50px;
-				margin: 2rem;
-			}
-
-			
+		
 
 			.grid-container {
 				display: grid;
-				grid-template-columns: repeat(3, 220px);
+                margin: 0 10px;
+				grid-template-columns: repeat(3, 200px);
                 grid-template-rows: 1fr 1fr;
 				cursor: pointer;
 				padding: 0.5rem 1rem;
@@ -56,10 +53,8 @@
 				border-radius: 40px;
 				justify-items: center;
 				overflow: hidden;
-				position: absolute;
-				bottom: 55px;
-                left: 52px;
-                opacity: 0.8;
+				opacity: 0.8;
+            
 
 			}
 
@@ -72,34 +67,44 @@
             }
 
             .grid-item{
-                font-size: 2.5rem;
+                font-size: 2rem;
                 color: #1d1d1d;
             }
 
 			.small-items{
-				color: #fff;
+				color: beige;
 				font-size: 1.5rem;
 				font-weight: 500;
-				text-shadow: 0px 0px 10px #1d1d1d;
+				text-shadow: 0px 0px 5px #1d1d1d;
 				letter-spacing: 2px;
+                margin: 0;
 			}
 
-			.date{
-				position: absolute;
-				top: 70px;
-				left: 90px;
-				
-			}
+            .date{
+                margin-top: 30px;
+            }
+
+            .time{
+                font-size: 1rem;
+            }
+
+            .forecast{
+                font-size: 3rem;
+                color: beige;
+                text-shadow: 0px 0px 5px #1d1d1d;
+                margin-top: 200px;
+                margin-bottom: 405px;
+            }
+
 
 		</style>
 	</head>
 	<body>
 		<section class="container">
 			<p class="small-items date"></p>
-			<img
-				src="images/rain-drops.jpg"
-				alt=""
-			/>
+            <p class="small-items time"></p>
+            <h2 class="forecast"></h2>
+
 			<div class="grid-container">
 				<div class="grid-header temperature">Temperature</div>
 				<div class="grid-header humidity">Humidity</div>
