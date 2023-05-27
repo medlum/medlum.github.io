@@ -28,7 +28,7 @@
 		<style>
 			.container {
 				width: 100%;
-				margin: 0 auto;
+				margin: 1rem;
 				position: relative;
 			}
 
@@ -37,11 +37,13 @@
 
 			img {
 				height: 1080px;
+				border: solid 2px #fff;
+				border-radius: 20px;
 			}
 
 			.grid-container {
 				display: grid;
-				grid-template-columns: repeat(3, 224px);
+				grid-template-columns: repeat(3, 220px);
                 grid-template-rows: 1fr 1fr;
 				cursor: pointer;
 				padding: 0.5rem 1rem;
@@ -49,12 +51,12 @@
 				font-weight: 500;
 				font-size: 1.2rem;
 				background: hsl(0, 4%, 95%);
-				border-radius: 15px;
+				border-radius: 20px;
 				justify-items: center;
 				overflow: hidden;
 				position: absolute;
-				bottom: 8.5px;
-                left: 4px;
+				bottom: 15px;
+                left: 10px;
                 height: 180px;
                 opacity: 0.8;
 
