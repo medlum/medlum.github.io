@@ -48,23 +48,34 @@ const get24HourData = (data,time) =>{
                     console.log(`${area}: ${regionObj[area]}`);  
                     switch(Forecast) {
                         case "Cloudy":
-                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud"></i></span> `
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= cloudy src="/images/cloudy.gif"
+                            alt=""/></span> `
                             break;
+                            /*
+                            <i class="fa-solid fa-cloud"></i>
+                            <i class="fas fa-cloud-bolt"></i>
+                            <i class="fa-solid fa-cloud-moon"></i>
+                            <i class="fa-solid fa-cloud-showers-heavy">
+                            */
                         
                         case "Thundery Showers":
-                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fas fa-cloud-bolt"></i></span> `
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= thundery src="/images/thunderstorm.gif"
+                            alt=""/></span> `
                             break;
                         
                         case "Partly Cloudy (Day)":
-                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud-sun"></i></i></span> `
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= partly-cloudy src="/images/cloudy-sun.gif"
+                            alt=""/></span>`
                             break;
 
                         case "Partly Cloudy (Night)":
-                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud-moon"></i></i></span> `
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= cloudy-night src="/images/cloudy-night.gif"
+                            alt=""/></span> `
                             break;
                         
                         case "Showers":
-                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud-showers-heavy"></i></i></i></span> `
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= shower src="/images/torrential-rain.gif"
+                            alt=""/></span> `
                             break;
                     }   
                 })
@@ -231,7 +242,7 @@ const getForecast = (data) => {
         .querySelector(".item-wind")
         .insertAdjacentHTML("afterbegin", `${windspeedLow} - ${windspeedHigh}`)
 
-    
+        
     document
     .querySelector(".forecast")
     .insertAdjacentHTML("afterbegin", `${forecast}`)
