@@ -150,7 +150,7 @@ button:hover {
     align-items: center;
     overflow: hidden;
     padding-left: 0rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     
 
 }
@@ -201,7 +201,7 @@ button:hover {
     text-align: center;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-image: url(/images/scribbles-circle.gif);
     background-repeat: no-repeat;
     background-position: 50%;
