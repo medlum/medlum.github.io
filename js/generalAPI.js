@@ -245,7 +245,7 @@ const getForecast = (data) => {
         
     document
     .querySelector(".forecast")
-    .insertAdjacentHTML("afterbegin", `${forecast}`)
+    .insertAdjacentHTML("beforeend", `${forecast}`)
     
 
 
