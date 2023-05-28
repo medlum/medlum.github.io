@@ -36,7 +36,7 @@
                 background-repeat: no-repeat;
 				background-size: 1270px 2632px ;
                 overflow: hidden;
-				border-radius: 100px;
+				border-radius: 120px;
 				border: solid 3px #fff;
 			}
 
@@ -46,37 +46,35 @@
 
 			.grid-container {
 				display: grid;
-                margin: 0 10px;
-				grid-template-columns: repeat(3, 400px);
-                grid-template-rows: 1fr 1fr;
+                grid-template-columns: repeat(3, 400px);
+                grid-template-rows: 300px 300px;
 				cursor: pointer;
-				padding: 0.5rem 1rem;
 				background: hsl(0, 4%, 95%);
 				border-radius: 100px;
 				justify-items: center;
 				overflow: hidden;
-				opacity: 0.8;
+				opacity: 0.7;
 				position: absolute;
 				bottom: 18px;
-				left: 5px;
+				left: 12px;
+				padding-right: 1rem;
+				padding-left: 1rem;
             
-
 			}
 
             .grid-header{
 				letter-spacing: 1.5px;
 				font-weight: 600;
-				font-size: 2rem;
+				font-size: 3rem;
                 margin: 20px 0;
                 color: #1d1d1d;
-				padding-top: 1rem;
+				padding-top: 3rem;
+
             }
 
             .grid-item{
-                font-size: 4rem;
+                font-size: 4.6rem;
                 color: #1d1d1d;
-				padding-right: 0.8rem;
-				padding-left: 0.8rem;
 				padding-bottom: 1rem;
             }
 
@@ -94,7 +92,7 @@
             }
 
             .time{
-                font-size: 2rem;
+                font-size: 3rem;
             }
 
             .forecast{
@@ -102,7 +100,7 @@
                 color: beige;
                 text-shadow: 0px 0px 5px #1d1d1d;
                 margin-top: 200px;
-                margin-bottom: 405px;
+                margin-bottom: 1rem;
             }
 
 
@@ -110,9 +108,10 @@
 	</head>
 	<body>
 		<section class="container">
+			<h2 class="forecast"></h2>
 			<p class="small-items date"></p>
             <p class="small-items time"></p>
-            <h2 class="forecast"></h2>
+            
 
 			<div class="grid-container">
 				<div class="grid-header temperature">Temperature</div>
