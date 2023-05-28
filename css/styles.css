@@ -150,6 +150,7 @@ button:hover {
     align-items: center;
     overflow: hidden;
     padding-left: 0rem;
+    margin-top: 2rem;
     
 
 }
@@ -185,6 +186,7 @@ button:hover {
 .time{
     margin-top: 0rem;
     font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 .date{
