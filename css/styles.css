@@ -78,7 +78,7 @@ body{
     right: 13%;
     top:25%;
     display: block;
-    box-shadow: 0 0 20px 5px #c4c3c3;
+    border: solid 0.5rem #7d7d7d;
 }
 .region{
     font-size: 3.5rem;
