@@ -12,7 +12,7 @@
 		/>
 		<title>Background Image Test</title>
 
-        <link
+		<link
 			rel="preconnect"
 			href="https://fonts.googleapis.com"
 		/>
@@ -25,92 +25,23 @@
 			href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
-		<style>
-			.container {
-				height: 2632px;
-				width: 1270px;
-				margin: 1rem auto;
-				position: relative;
-				text-align: center;
-				background-image: url(images/rain-drops.jpg) ;
-                background-repeat: no-repeat;
-				background-size: 1270px 2632px ;
-                overflow: hidden;
-				border-radius: 120px;
-				border: solid 3px #fff;
-			}
 
-            body{font-family: 'Wix Madefor Text', sans-serif;
-            }
-		
+		<link
+			rel="stylesheet"
+			href="css/styles.css"
+		/>
 
-			.grid-container {
-				display: grid;
-                grid-template-columns: repeat(3, 400px);
-                grid-template-rows: 300px 300px;
-				cursor: pointer;
-				background: hsl(0, 4%, 95%);
-				border-radius: 100px;
-				justify-items: center;
-				overflow: hidden;
-				opacity: 0.7;
-				position: absolute;
-				bottom: 18px;
-				left: 12px;
-				padding-right: 1rem;
-				padding-left: 1rem;
-            
-			}
-
-            .grid-header{
-				letter-spacing: 1.5px;
-				font-weight: 600;
-				font-size: 3rem;
-                margin: 20px 0;
-                color: #1d1d1d;
-				padding-top: 3rem;
-
-            }
-
-            .grid-item{
-                font-size: 4.6rem;
-                color: #1d1d1d;
-				padding-bottom: 1rem;
-            }
-
-			.small-items{
-				color: beige;
-				font-size: 3.5rem;
-				font-weight: 500;
-				text-shadow: 0px 0px 5px #1d1d1d;
-				letter-spacing: 2px;
-                margin: 0;
-			}
-
-            .date{
-                margin-top: 30px;
-            }
-
-            .time{
-                font-size: 3rem;
-            }
-
-            .forecast{
-                font-size: 12rem;
-                color: beige;
-                text-shadow: 0px 0px 5px #1d1d1d;
-                margin-top: 200px;
-                margin-bottom: 1rem;
-            }
-
-
-		</style>
+        <script
+			src="https://kit.fontawesome.com/60e07fbd21.js"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
-		<section class="container">
-			<h2 class="forecast"></h2>
+         <section class="general-container">
+			
 			<p class="small-items date"></p>
             <p class="small-items time"></p>
+            <h2 class="forecast"></h2>
             
 
 			<div class="grid-container">
@@ -127,12 +58,77 @@
 					<span style="font-size: 2rem">km/h</span>
 					<span
 						class="wind-direction"
-						style="display: block; font-size: 2rem"
+						style="display: block; font-size: 2rem; text-align: center;"
 					></span>
 			</div>
-
-
 		</section>
-        <script src="js/generalAPI.js"></script>
-	</body>
+
+       
+
+        <div class="container map-layout">
+				<img
+					class="map"
+					src="images/singapore2.png"
+					alt=""
+				/>
+				<div
+					class="region north"
+					id="north"
+				>
+					North
+				</div>
+				<div
+					class="region south"
+					id="south"
+				>
+					South
+				</div>
+				<div
+					class="region east"
+					id="east"
+				>
+					East
+				</div>
+				<div
+					class="region west"
+					id="west"
+				>
+					West
+				</div>
+				<div
+					class="region central"
+					id="central"
+				>
+					Central
+				</div>
+              
+			</div>
+
+			<div class="button-container">
+                <button
+                class="btn-am"
+                id="event-am"
+            >
+                Morning
+            </button>
+            <button
+                class="btn-pm"
+                id="event-pm"
+            >
+                Afternoon
+            </button>
+            <button
+                class="btn-night"
+                id="event-night"
+            >
+                Night
+            </button>
+				
+			</div>
+		</div>
+
+       
+
+		<script src="js/generalAPI.js"></script>
+    </body>
 </html>

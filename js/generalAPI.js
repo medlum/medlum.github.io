@@ -20,10 +20,83 @@ let dateText = `${date.day}-${date.monthName}-${date.year}`
 let timeText =`${date.hour}:${date.min}:${date.min}`;
 let dmyd = `${date.day} ${date.monthName} ${date.year}, ${date.weekdayName}`;
 
+
 document.querySelector(".date").insertAdjacentHTML("beforeend", `${dmyd}`);
 document.querySelector(".time").insertAdjacentHTML("beforeend", `${timeText}`);
 
 api24hour = `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?date_time=${dateTime}`
+
+
+
+const get24HourData = (data,time) =>{
+
+    const periodArray = Object.keys(data.items[0].periods);
+    const periodObj = data.items[0].periods;
+    periodArray.forEach((i) => {
+
+        /*console.log(`${i} : ${periodObj[i].time.start}`)*/
+        hourString = (periodObj[i].time.start);
+        hourString = hourString.slice(11,16)
+        /*console.log(time == hourString);*/
+        const regionObj = data.items[0].periods[i].regions;
+        const regionkey = Object.keys(regionObj);
+
+        switch(time){
+            case hourString:
+                regionkey.forEach((area) => {
+                    const Forecast = `${regionObj[area]}`;
+                    console.log(`${area}: ${regionObj[area]}`);  
+                    switch(Forecast) {
+                        case "Cloudy":
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud"></i></span> `
+                            break;
+                        
+                        case "Thundery Showers":
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fas fa-cloud-bolt"></i></span> `
+                            break;
+                        
+                        case "Partly Cloudy (Day)":
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud-sun"></i></i></span> `
+                            break;
+
+                        case "Partly Cloudy (Night)":
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud-moon"></i></i></span> `
+                            break;
+                        
+                        case "Showers":
+                            document.getElementById(`${area}`).innerHTML = `<span class="icon"><i class="fa-solid fa-cloud-showers-heavy"></i></i></i></span> `
+                            break;
+                    }   
+                })
+                break;
+        }
+    })  
+};
+
+let btnAM = document.getElementById("event-am");
+
+btnAM.addEventListener("mouseover", function (event) {
+fetch(api24hour)
+.then((data) => data.json())
+.then((data) => get24HourData(data, time="06:00")) 
+});
+
+/*Insert noon forecast with event to button 'event-pm'*/
+let btnPM = document.getElementById("event-pm");
+
+btnPM.addEventListener("mouseover", function (event) {
+fetch(api24hour)
+.then((data) => data.json())
+.then((data) => get24HourData(data,time="12:00")) 
+});
+
+/*Insert night forecast with event to button 'event-night'*/
+let btnNight = document.getElementById("event-night");
+btnNight.addEventListener("mouseover", function (event) {
+fetch(api24hour)
+.then((data) => data.json())
+.then((data) => get24HourData(data,time="18:00")) 
+});
 
 
 const getGeneralData = () =>{
@@ -136,7 +209,7 @@ const getWindDirection = (data) =>{
 }
 
 const getForecast = (data) => {
-    /*General Forecast*/
+
     const humidityLow = data.items[0].general.relative_humidity.low;
     const humidityhigh = data.items[0].general.relative_humidity.high;
     const temperatureLow = data.items[0].general.temperature.low;
@@ -158,9 +231,11 @@ const getForecast = (data) => {
         .querySelector(".item-wind")
         .insertAdjacentHTML("afterbegin", `${windspeedLow} - ${windspeedHigh}`)
 
+    
     document
     .querySelector(".forecast")
     .insertAdjacentHTML("afterbegin", `${forecast}`)
+    
 
 
        
