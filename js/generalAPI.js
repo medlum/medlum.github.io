@@ -18,10 +18,10 @@ let  hhmmss = `T${date.hour}%3A${date.min}%3A${date.secs}`;
 let dateTime = `${yyyymmdd}${hhmmss}`;
 let dateText = `${date.day}-${date.monthName}-${date.year}`
 let timeText =`${date.hour}:${date.min}:${date.min}`;
-
 let dmyd = `${date.day} ${date.monthName} ${date.year}, ${date.weekdayName}`;
-document.querySelector(".date").insertAdjacentHTML("beforeend", dmyd)
-document.querySelector(".time").insertAdjacentHTML("beforeend", timeText)
+
+document.querySelector(".date").insertAdjacentHTML("beforeend", `${dmyd}`);
+document.querySelector(".time").insertAdjacentHTML("beforeend", `${timeText}`);
 
 api24hour = `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?date_time=${dateTime}`
 
@@ -161,6 +161,7 @@ const getForecast = (data) => {
     document
     .querySelector(".forecast")
     .insertAdjacentHTML("afterbegin", `${forecast}`)
+
 
        
 }

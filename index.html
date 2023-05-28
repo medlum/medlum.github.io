@@ -33,6 +33,7 @@
 				position: relative;
 				text-align: center;
 				background-image: url(images/rain-drops.jpg);
+				background-size: 2632px 1270px;
 			}
 
             body{font-family: 'Wix Madefor Text', sans-serif;
@@ -51,7 +52,7 @@
 
 			.grid-container {
 				display: grid;
-				grid-template-columns: repeat(3, 220px);
+				grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: 1fr 1fr;
 				cursor: pointer;
 				padding: 0.5rem 1rem;
@@ -60,45 +61,57 @@
 				justify-items: center;
 				overflow: hidden;
 				position: absolute;
-				bottom: 55px;
-                left: 52px;
+				bottom: 85px;
+                left: 59px;
                 opacity: 0.8;
 
 			}
 
             .grid-header{
-				letter-spacing: 1.5px;
+				letter-spacing: 1.8px;
 				font-weight: 600;
-				font-size: 1.5rem;
+				font-size: 2rem;
                 margin: 20px 0;
                 color: #1d1d1d;
             }
 
             .grid-item{
-                font-size: 2.5rem;
+                font-size: 3.5rem;
                 color: #1d1d1d;
+				padding-bottom: 1rem;
             }
 
 			.small-items{
-				color: #fff;
-				font-size: 1.5rem;
+				color: #fcfbf6;
+				font-size: 2.8rem;
 				font-weight: 500;
 				text-shadow: 0px 0px 10px #1d1d1d;
 				letter-spacing: 2px;
 			}
 
-			.date{
+			.datetime{
 				position: absolute;
-				top: 70px;
-				left: 90px;
-				
+				top: 100px;
+				left: 220px;
+			}
+
+			.date{
+				font-size: 3rem;
+			}
+
+			.forecast{
+				font-size: 8rem;
 			}
 
 		</style>
 	</head>
 	<body>
 		<section class="container">
-			<p class="small-items date"></p>
+			<div class="datetime">
+				<p class="small-items date"></p>
+				<p class="small-items time"></p>
+				<p class="small-items forecast"></p>
+			</div>
 			<img
 				src="images/rain-drops.jpg"
 				alt=""
@@ -108,16 +121,16 @@
 				<div class="grid-header humidity">Humidity</div>
 				<div class="grid-header wind">Wind</div>
                 <div class="grid-item item-temp">
-					<span style="font-size: 0.8rem">°C</span>
+					<span style="font-size: 1.5rem">°C</span>
 				</div>
 				<div class="grid-item item-humidity">
-					<span style="font-size: 0.8rem">%</span>
+					<span style="font-size: 1.5rem">%</span>
 				</div>
 				<div class="grid-item item-wind">
-					<span style="font-size: 0.8rem">km/h</span>
+					<span style="font-size: 1.5rem">km/h</span>
 					<span
 						class="wind-direction"
-						style="display: block; font-size: 1rem"
+						style="display: block; font-size: 1.5rem"
 					></span>
 			</div>
 
