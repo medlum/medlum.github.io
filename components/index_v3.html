@@ -10,7 +10,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Background Image Test</title>
+		<title>Layout Test</title>
 
         <link
 			rel="preconnect"
@@ -32,21 +32,26 @@
 				margin: 1rem auto;
 				position: relative;
 				text-align: center;
-				background-image: url(images/rain-drops.jpg) ;
-                background-repeat: no-repeat;
-				background-size: 1270px 2632px ;
-                overflow: hidden;
-				border-radius: 50px;
-				border: solid 3px #fff;
+				background-image: url(images/rain-drops.jpg);
+				background-size: 2632px 1270px;
 			}
 
             body{font-family: 'Wix Madefor Text', sans-serif;
             }
-		
+
+			img {
+				height: 2532px;
+				width: 1170px;
+				border: solid 2px #fff;
+				border-radius: 50px;
+				margin: 2rem;
+				
+			}
+
+			
 
 			.grid-container {
 				display: grid;
-                margin: 0 10px;
 				grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: 1fr 1fr;
 				cursor: pointer;
@@ -55,16 +60,15 @@
 				border-radius: 40px;
 				justify-items: center;
 				overflow: hidden;
-				opacity: 0.8;
 				position: absolute;
-				bottom: 20px;
-				left: 8px;
-            
+				bottom: 85px;
+                left: 59px;
+                opacity: 0.8;
 
 			}
 
             .grid-header{
-				letter-spacing: 1.5px;
+				letter-spacing: 1.8px;
 				font-weight: 600;
 				font-size: 2rem;
                 margin: 20px 0;
@@ -72,61 +76,61 @@
             }
 
             .grid-item{
-                font-size: 4rem;
+                font-size: 3.5rem;
                 color: #1d1d1d;
-				padding-right: 1rem;
-				padding-left: 1rem;
+				padding-bottom: 1rem;
             }
 
 			.small-items{
-				color: beige;
-				font-size: 3.5rem;
+				color: #fcfbf6;
+				font-size: 2.8rem;
 				font-weight: 500;
-				text-shadow: 0px 0px 5px #1d1d1d;
+				text-shadow: 0px 0px 10px #1d1d1d;
 				letter-spacing: 2px;
-                margin: 0;
 			}
 
-            .date{
-                margin-top: 30px;
-            }
+			.datetime{
+				position: absolute;
+				top: 100px;
+				left: 220px;
+			}
 
-            .time{
-                font-size: 2rem;
-            }
+			.date{
+				font-size: 3rem;
+			}
 
-            .forecast{
-                font-size: 10rem;
-                color: beige;
-                text-shadow: 0px 0px 5px #1d1d1d;
-                margin-top: 200px;
-                margin-bottom: 405px;
-            }
-
+			.forecast{
+				font-size: 8rem;
+			}
 
 		</style>
 	</head>
 	<body>
 		<section class="container">
-			<p class="small-items date"></p>
-            <p class="small-items time"></p>
-            <h2 class="forecast"></h2>
-
+			<div class="datetime">
+				<p class="small-items date"></p>
+				<p class="small-items time"></p>
+				<p class="small-items forecast"></p>
+			</div>
+			<img
+				src="images/rain-drops.jpg"
+				alt=""
+			/>
 			<div class="grid-container">
 				<div class="grid-header temperature">Temperature</div>
 				<div class="grid-header humidity">Humidity</div>
 				<div class="grid-header wind">Wind</div>
                 <div class="grid-item item-temp">
-					<span style="font-size: 2rem">°C</span>
+					<span style="font-size: 1.5rem">°C</span>
 				</div>
 				<div class="grid-item item-humidity">
-					<span style="font-size: 2rem">%</span>
+					<span style="font-size: 1.5rem">%</span>
 				</div>
 				<div class="grid-item item-wind">
-					<span style="font-size: 2rem">km/h</span>
+					<span style="font-size: 1.5rem">km/h</span>
 					<span
 						class="wind-direction"
-						style="display: block; font-size: 2rem"
+						style="display: block; font-size: 1.5rem"
 					></span>
 			</div>
 
