@@ -71,6 +71,15 @@ body{
     
 }
 
+.profile{
+    width: 5%;
+    border-radius: 50%;
+    position: absolute;
+    right: 13%;
+    top:25%;
+    display: block;
+    box-shadow: 0 0 20px 5px #c4c3c3;
+}
 .region{
     font-size: 3.5rem;
    
@@ -150,7 +159,7 @@ button:hover {
     align-items: center;
     overflow: hidden;
     padding-left: 0rem;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
     
 
 }
@@ -210,8 +219,3 @@ button:hover {
     margin: 0;
 }
 
-footer{
-    margin-top: 20rem;
-    display: block;
-    text-align: center;
-}
