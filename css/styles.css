@@ -6,6 +6,7 @@
 body{
     font-family: 'Caveat', cursive;
     height: 100vh;
+    background: #fff
 }
 
 
@@ -202,9 +203,9 @@ button:hover {
     background-image: url(/images/scribbles-circle.gif);
     background-repeat: no-repeat;
     background-position: 50%;
-    padding-top: 9rem;
-    padding-bottom: 9rem;
-    margin: 1rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    margin: 0;
 }
 
 footer{
