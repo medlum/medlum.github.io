@@ -4,12 +4,12 @@ const date = {
     year : today.getFullYear(),
     month : String(today.getMonth() + 1).padStart(2, "0"),
     monthName : today.toLocaleString('default', { month: 'long' }),
-    day : today.getDate(),
+    day : String(today.getDate()).padStart(2,"0"),
     weekday : today.getDay(),
     weekdayName : today.toLocaleString('default', { weekday: 'long' }),
     hour : String(today.getHours()).padStart(2, "0"),
     min : String(today.getMinutes()).padStart(2, "0"),
-    secs : today.getSeconds()
+    secs : String(today.getSeconds()).padStart(2,"0")
   
 };
 
@@ -26,7 +26,7 @@ document.querySelector(".time").insertAdjacentHTML("beforeend", `${timeText}`);
 
 api24hour = `https://api.data.gov.sg/v1/environment/24-hour-weather-forecast?date_time=${dateTime}`
 
-
+console.log(api24hour)
 
 const get24HourData = (data,time) =>{
 
