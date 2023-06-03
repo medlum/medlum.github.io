@@ -65,12 +65,12 @@ const get24HourData = (data,time) =>{
                         
                         case "Partly Cloudy (Day)":
                             document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= partly-cloudy src="/images/cloudy-sun.gif"
-                            alt=""/></span>`
+                            alt=""/></span> `
                             break;
 
                         case "Partly Cloudy (Night)":
                             document.getElementById(`${area}`).innerHTML = `<span class="icon"><img class= cloudy-night src="/images/cloudy-night.gif"
-                            alt=""/></span> `
+                            alt=""/></span>  `
                             break;
                         
                         case "Showers":
@@ -243,9 +243,9 @@ const getForecast = (data) => {
         .insertAdjacentHTML("afterbegin", `${windspeedLow} - ${windspeedHigh}`)
 
         
-    document
-    .querySelector(".forecast")
-    .insertAdjacentHTML("beforeend", `${forecast}`)
+    //document
+    //.querySelector(".forecast")
+    //.insertAdjacentHTML("beforeend", `${forecast}`)
     
 
 
@@ -253,3 +253,131 @@ const getForecast = (data) => {
 }
 
 getGeneralData()
+
+
+query = date.hour;
+const getGeneralData2 = () => {
+    fetch(api24hour)
+        .then((data) => data.json())
+        .then((data) => {
+            arrPeriod = data.items[0].periods;
+
+            arrPeriod.map(({ time, regions }) => {
+                if (query > 18) {
+                    getRegionForecast(06, "morning");
+                } else if (query > 12) {
+                    getRegionForecast(18, "night");
+                } else if (query > 06) {
+                    getRegionForecast(12, "afternoon");
+                } else if (query < 06) {
+                    getRegionForecast(06, "morning");
+                }
+
+                //global function to find least frequent value
+                function leastFrequent(arr, n) {
+                    // Sort the array
+                    arr.sort();
+
+                    // find the min frequency using
+                    // linear traversal
+                    let min_count = n + 1,
+                        res = -1;
+                    let curr_count = 1;
+
+                    for (let i = 1; i < n; i++) {
+                        if (arr[i] == arr[i - 1]) {
+                            curr_count++;
+                        } else {
+                            if (curr_count < min_count) {
+                                min_count = curr_count;
+                                res = arr[i - 1];
+                            }
+
+                            curr_count = 1;
+                        }
+                    }
+
+                    // If last element is least frequent
+
+                    if (curr_count < min_count) {
+                        min_count = curr_count;
+
+                        res = arr[n - 1];
+                    }
+
+                    return res;
+                }
+
+                // new function
+                function getRegionForecast(hourtime, daypart) {
+                    if (time.start.slice(11, 13) == hourtime) {
+                        const arr = [
+                            regions.west,
+                            regions.east,
+                            regions.central,
+                            regions.south,
+                            regions.north,
+                        ];
+
+                        const dict = {
+                            west: regions.west,
+                            east: regions.east,
+                            central: regions.central,
+                            south: regions.south,
+                            north: regions.north,
+                        };
+
+                        const allEqual = (arr) => arr.every((val) => val === arr[0]);
+                        if (allEqual(arr)) {
+                            console.log(
+                                `Expects ${arr[0]} in most part of the island in the ${daypart}`
+                            );
+
+                            forecastSummary = `Expects ${arr[0]} in most part of the island in the ${daypart}`
+
+                            document
+                            .querySelector(".forecast")
+                            .insertAdjacentHTML("beforeend", `${forecastSummary}`)
+
+                            /*if all values are not equal, find the least frequent value
+                using leastFrequent() function*/
+                        } else {
+                            let mf = 1;
+                            let m = 0;
+                            let item;
+                            for (let i = 0; i < arr.length; i++) {
+                                for (let j = i; j < arr.length; j++) {
+                                    if (arr[i] == arr[j]) m++;
+                                    if (mf < m) {
+                                        mf = m;
+                                        item = arr[i];
+                                    }
+                                }
+                                m = 0;
+                            }
+
+                            ele = [];
+                            /*initialize a const to store outcome from function*/
+                            const outcome = leastFrequent(arr, arr.length);
+                            /*if key-value pair == outcome, store it in ele*/
+                            Object.keys(dict).forEach((element) => {
+                                if (dict[element] == outcome) {
+                                    ele.push(element);
+                                }
+                            });
+
+                            /* log message for least and most frequent value*/
+                            console.log(
+                                `${leastFrequent(arr, arr.length)} in the ${ele.join(
+                                    " and "
+                                )}. ${item} for the rest of the island in the ${daypart}.`
+                            );
+                        }
+                    }
+                }
+            });
+        });
+};
+
+getGeneralData2();
+
