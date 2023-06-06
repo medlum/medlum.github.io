@@ -8,137 +8,207 @@
 		/>
 		<meta
 			name="viewport"
-			content="width=device-width, initial-scale=0.1"
+			content="width=device-width, initial-scale=1.0"
 		/>
-        <meta
-        name="description"
-        content="24-hour weather forecast from data.gov.sg."
-    />
-    <meta
-        property="og:title"
-        content="Need a brolly today?"
-    />
 
-    <meta
-        property="og:description"
-        content="Weather Conditions"
-    />
+		<!--METADATA-->
+		<meta
+			name="description"
+			content="24-hour weather forecast from data.gov.sg."
+		/>
+		<meta
+			property="og:title"
+			content="Need a brolly today?"
+		/>
 
-    <meta
-        property="og:type"
-        content="website"
-    />
+		<meta
+			property="og:description"
+			content="Weather Conditions"
+		/>
 
-    <meta
-        property="og:image"
-        content="https://media.licdn.com/dms/image/D5603AQFnCdsZH6BnOQ/profile-displayphoto-shrink_800_800/0/1685265622871?e=1691020800&v=beta&t=ntmagidJb-_Hmr_akObO6PntlUFWOEdgw2YA_ej3YGU"
-	/>
-    <meta
-        property="og:url"
-        content="https://medlum.github.io/"
-    />
-		<title>Weather</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Nothing+You+Could+Do&family=Permanent+Marker&display=swap" rel="stylesheet">
+		<meta
+			property="og:type"
+			content="website"
+		/>
+
+		<meta
+			property="og:image"
+			content="https://media.licdn.com/dms/image/D5603AQFnCdsZH6BnOQ/profile-displayphoto-shrink_800_800/0/1685265622871?e=1691020800&v=beta&t=ntmagidJb-_Hmr_akObO6PntlUFWOEdgw2YA_ej3YGU"
+		/>
+		<meta
+			property="og:url"
+			content="https://medlum.github.io/"
+		/>
+		<!-- WEB TTILE -->
+		<title>All about Cycling</title>
 
 		<link
-			rel="stylesheet"
-			href="css/styles.css"
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
 		/>
-
-        <script
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@200;300;400;500;600&family=Nothing+You+Could+Do&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- FONTAWESOME -->
+		<script
 			src="https://kit.fontawesome.com/60e07fbd21.js"
 			crossorigin="anonymous"
 		></script>
+
+		<!-- CSS STYLESHEET-->
+
+		<link
+			rel="stylesheet"
+			href="css/style.css"
+		/>
 	</head>
 	<body>
-         <section class="general-container">
-           
-            <p class="small-items date"></p>
-            <p class="small-items time"></p>			
-            <p class="forecast"></p>          
-
-			<div class="grid-container">
-				<div class="grid-header temperature">Temperature</div>
-                <div class="grid-item item-temp">
-					<span style="font-size: 2.5rem">°C</span>
-				</div>
-				<div class="grid-header humidity">Humidity</div>
-                <div class="grid-item item-humidity">
-					<span style="font-size: 2.5rem">%</span>
-				</div>
-				<div class="grid-header wind">Wind</div>	
-				<div class="grid-item item-wind">
-					<span style="font-size: 2.5rem">km/h</span>
-					<span
-						class="wind-direction"
-						style="display: inline; font-size: 2.5rem; text-align: center;"
-					></span>
+		<section class="container-page">
+			<div class="container-nav">
+				<img
+					class="header-icon"
+					src="images/cyclist1.png"
+					alt=""
+				/>
 			</div>
-		</section>
-        <div class="container map-layout">
-            
+
+			<div class="container-weather-report">
+				<span class="temp temp-high"></span>
+				<span class="temp temp-low"></span>
+				<p class="weather-report"></p>
+			</div>
+			<div class="flex-container-humidity-wind-temp">
+				<button class="btn-item">
+					<span id="temp-icon">
+						<img
+							style="width: 10px"
+							src="images/thermometer2.png"
+							alt=""
+						/>
+						TEMPERATURE
+					</span>
+					<span class="item-temp"></span>
+					<span
+						style="
+							font-size: 0.5rem;
+							color: #bedffb;
+							display: block;
+							letter-spacing: 1px;
+						"
+						>°C</span
+					>
+				</button>
+				<button class="btn-item">
+					<span id="wind-icon">
+						<img
+							style="width: 10px"
+							src="images/wind-white.png"
+							alt=""
+						/>
+						WIND
+					</span>
+					<span class="item-wind"></span>
+					<span
+						style="
+							font-size: 0.3rem;
+							color: #bedffb;
+							display: block;
+							letter-spacing: 1px;
+						"
+						>KM/H</span
+					>
+				</button>
+				<button class="btn-item">
+					<span id="humidity-icon">
+						<img
+							style="width: 10px"
+							src="images/humidity2.png"
+							alt=""
+						/>
+						HUMIDITY
+					</span>
+					<span class="item-humidity"></span>
+					<span
+						style="
+							font-size: 0.5rem;
+							color: #bedffb;
+							display: block;
+							letter-spacing: 1px;
+						"
+						>%</span
+					>
+				</button>
+			</div>
+			<div class="container-map">
 				<img
 					class="map"
-					src="images/singapore-3.png"
+					src="images/singapore.svg"
 					alt=""
 				/>
 				<div
 					class="region north"
 					id="north"
-				>
-               
-              
-				</div>
+				></div>
+
 				<div
 					class="region south"
 					id="south"
-				>
-				</div>
-                
+				></div>
 				<div
 					class="region east"
 					id="east"
-				>
-				</div>
+				></div>
 				<div
 					class="region west"
 					id="west"
-				>
-				</div>
-                
+				></div>
 				<div
 					class="region central"
 					id="central"
-				>
+				></div>
+				<div class="button-container">
+					<button
+						class="btn-am"
+						id="event-am"
+					>
+						<img
+							src="images/morning.png"
+							class="button-icon"
+							alt=""
+						/>
+						AM
+					</button>
+					<button
+						class="btn-pm"
+						id="event-pm"
+					>
+						<img
+							src="images/sun.png"
+							class="button-icon"
+							alt=""
+						/>
+						PM
+					</button>
+					<button
+						class="btn-night"
+						id="event-night"
+					>
+						<img
+							src="images/moon.png"
+							class="button-icon"
+							alt=""
+						/>
+						NIGHT
+					</button>
 				</div>
-                <img class="profile" src="https://media.licdn.com/dms/image/D5603AQFnCdsZH6BnOQ/profile-displayphoto-shrink_800_800/0/1685265622871?e=1691020800&v=beta&t=ntmagidJb-_Hmr_akObO6PntlUFWOEdgw2YA_ej3YGU" alt="">             
 			</div>
-
-			<div class="button-container">
-                <button
-                class="btn-am"
-                id="event-am"
-            >
-                Morning 
-            </button>
-			<button
-                class="btn-pm"
-                id="event-pm"
-            >
-                Afternoon
-            </button>
-            <button
-                class="btn-night"
-                id="event-night"
-            >
-                Night
-            </button>
-			
-			</div>
-		</div>
-
-		<script src="js/generalAPI.js"></script>
-    </body>
+		</section>
+		<script src="js/apiscript.js"></script>
+	</body>
 </html>
