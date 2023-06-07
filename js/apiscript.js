@@ -33,11 +33,6 @@ const get24HourData = (data,time) =>{
     const periodArray = Object.keys(data.items[0].periods);
     const periodObj = data.items[0].periods;
 
-    
-
-
-
-
     periodArray.forEach((i) => {
 
         /*console.log(`${i} : ${periodObj[i].time.start}`)*/
@@ -146,7 +141,9 @@ fetch(api24hour)
 //        });  
 //}
 
-query = date.hour;
+query = `${date.hour}${date.min}`;
+console.log(query)
+
 const getWeatherByRegions = () => {
     fetch(api24hour)
         .then((data) => data.json())
@@ -199,6 +196,7 @@ const getWeatherByRegions = () => {
                     return res;
                 }
 
+               
                 // new function
                 function getRegionForecast(hourtime, daypart) {
                     if (time.start.slice(11, 13) == hourtime) {
@@ -218,28 +216,55 @@ const getWeatherByRegions = () => {
                             north: regions.north,
                         };
 
+                        function checkString(emptyarr) {
+                            //let emptyarr = arr[0].split(" ");
+                            let outcome = 0;
+            
+                            if (emptyarr.length == 3) {
+                                outcome = emptyarr.slice(0, 2).toString().replace(",", " ");
+                            }
+            
+                            if (emptyarr.length == 2) {
+                                if (arr[1].includes("(")) {
+                                    outcome = emptyarr[0];
+                                } else {
+                                    outcome = emptyarr.slice(0, 2).toString().replace(",", " ");
+                                }
+                            }
+            
+                            if (emptyarr.length == 1) outcome = arr[0];
+            
+                            return outcome;
+                        }
+
                         const allEqual = (arr) => arr.every((val) => val === arr[0]);
                        
 
                         if (allEqual(arr)) {
                             let emptyarr = arr[0].split(" ");
+                            let outcome = checkString(emptyarr)
+                           
 
-                            let arrString =
-                            emptyarr.length > 1
-                            ? () => `${emptyarr[0]} ${emptyarr[1].toLowerCase()}`
-                            : () => `${emptyarr}`;
+                            //let arrString =
+                            //emptyarr.length > 1
+                            //? () => `${emptyarr[0]} ${emptyarr[1].toLowerCase()}`
+                            //: () => `${emptyarr}`;
+//
+                            //if (emptyarr.length > 2 && emptyarr[1].includes("(")) arrString = emptyarr[0]
+//
+                            //console.log(emptyarr[0])
 
-                            if (emptyarr.length > 1 && emptyarr[1].includes("(")) arrString = emptyarr[0]
-
-                            console.log(emptyarr[0])
+                            document
+                                .querySelector(".header-day")
+                                .insertAdjacentHTML("afterbegin", `${daypart.charAt(0).toUpperCase()}${daypart.slice(1)} Ride?`)
 
 
                             document.querySelector(".weather-report")
                                 .insertAdjacentHTML("afterbegin",  
-                                                    `Mostly ${emptyarr[0].toLowerCase()} 
-                                                    for in the ${daypart}`)
+                                                    `${outcome} 
+                                                    in the ${daypart}.`)
                             console.log(
-                                `Mostly ${emptyarr[0].toLowerCase()} in the ${daypart}.`
+                                `${emptyarr[0].toLowerCase()} in the ${daypart}.`
                             );
 
                             /*if all values are not equal, find the least frequent value
@@ -265,35 +290,40 @@ const getWeatherByRegions = () => {
                             /*if key-value pair == outcome, store it in ele*/
                             Object.keys(dict).forEach((element) => {
                                 if (dict[element] == outcome) {
-                                    ele.push(element.concat("ern"));
+                                    ele.push(element);
                                 }
                             });
 
+                            console.log(outcome)
                             let emptyarr = outcome.split(" ");
+                            let outcomeString = checkString(emptyarr)
 
-                            if (emptyarr.length > 1 && emptyarr[1].includes("(")) arrString = emptyarr[0]
-
-                            let outcomeString =
-                                emptyarr.length > 1
-                                    ? () => `${emptyarr[0]} ${emptyarr[1].toLowerCase()}`
-                                    : () => `${emptyarr}`;
+                            //if (emptyarr.length > 1 && emptyarr[1].includes("(")) arrString = emptyarr[0]
+//
+                            //let outcomeString =
+                            //    emptyarr.length > 1
+                            //        ? () => `${emptyarr[0]} ${emptyarr[1].toLowerCase()}`
+                            //        : () => `${emptyarr}`;
 
                            
 
-                            console.log(outcomeString());
+                            console.log(outcomeString);
 
                             /* log message for least and most frequent value*/
-
+                            
+                            document
+                                .querySelector(".header-day")
+                                .insertAdjacentHTML("afterbegin", `${daypart.charAt(0).toUpperCase()}${daypart.slice(1)} Ride?`)
+                           
                             document
                                 .querySelector(".weather-report")
                                 .insertAdjacentHTML("afterbegin", 
-                                                    `${outcomeString()} in the 
-                                                    ${ele.join(" and ")} areas 
-                                                    and ${item.toLowerCase()} 
-                                                    for the rest in the ${daypart}`)
+                                                    ` ${outcomeString} in the 
+                                                    ${ele.join(" and ")} and
+                                                    ${item.toLowerCase()} in the rest of the areas`)
 
                             console.log(
-                                `${outcomeString()} in the ${ele.join(
+                                `${outcomeString} in the ${ele.join(
                                     " and "
                                 )} areas and ${item.toLowerCase()} for the rest in the ${daypart}`
                             );

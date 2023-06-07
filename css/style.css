@@ -203,16 +203,16 @@ body{
 
 .btn-item{
     border-radius: 20px;
-    font-size: 1rem;
-    width: 4.2rem;
-    height: 5.3rem;
+    font-size: 1.1rem;
+    width: 7rem;
+    height: 6rem;
     background: #000 /*#2c9cfe*/;
     border: solid 1px #888888;
     opacity: 1;
     position: relative;
     color: #fff;
     text-align: center;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 
@@ -230,10 +230,11 @@ body{
 
 #wind-direction{
     position: absolute;
-    margin-top: 0.3rem;
-    top: 250%;
-    left: 220%;
+    margin-top: 1rem;
+    top: -100%;
+    left: 330%;
     border-radius: 50%;
     background: #5ecafc;
     padding: 0.1rem;
 }
+

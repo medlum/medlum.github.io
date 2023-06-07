@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let arr = ["Fair (Night)", "Fair (Night)"]; //Partly Cloudy (Day) Fair (Night) "Thundery Shower
+
+			let emptyarr = arr[0].split(" ");
+
+			function checkString(emptyarr) {
+				//let emptyarr = arr[0].split(" ");
+				let outcome = 0;
+
+				if (emptyarr.length == 3) {
+					outcome = emptyarr.slice(0, 2).toString().replace(",", " ");
+				}
+
+				if (emptyarr.length == 2) {
+					if (arr[1].includes("(")) {
+						outcome = emptyarr[0];
+					} else {
+						outcome = emptyarr.slice(0, 2).toString().replace(",", " ");
+					}
+				}
+
+				if (emptyarr.length == 1) outcome = arr[0];
+
+				return outcome;
+			}
+
+			result = checkString(emptyarr);
+			console.log(result);
+
+			daypart = "morning";
+			console.log(daypart.charAt(0));
+		</script>
+	</body>
+</html>
